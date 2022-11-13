@@ -25,7 +25,7 @@ class Aluno
 class Saladeaula
 {
     //Lista dinâmica (Não precisa de tamanho)
-    List<Aluno> emsala = new List<Aluno>(); 
+    List<Aluno> emsala = new List<Aluno>();
     public String letra;
     int bloco;
     int capacidade;
