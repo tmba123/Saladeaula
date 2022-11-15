@@ -64,8 +64,6 @@ class Saladeaula
         }
     }
 
-    
-    //Sair um carro no parque
     public String sair(String naluno)
     {
         Aluno toRemove = null;
