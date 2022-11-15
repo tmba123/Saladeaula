@@ -5,7 +5,7 @@ Saladeaula sala = new Saladeaula("A",1,2);
 
 app.MapGet("/", () => sala.listar());
 app.MapGet("/entrar/{naluno}/{nome}", (string naluno, string nome ) => sala.entrar(new Aluno(naluno,nome)));
-app.MapGet("/sair/{naluno}", (string naluno) => parque.sair(naluno));
+app.MapGet("/sair/{naluno}", (string naluno) => sala.sair(naluno));
 app.Run();
 
 
@@ -60,11 +60,10 @@ class Saladeaula
         }
         else
         {
-            return "Sala completo";
+            return "Sala completa";
         }
     }
-    
-    
+
     
     //Sair um carro no parque
     public String sair(String naluno)
@@ -89,7 +88,5 @@ class Saladeaula
         {
             return "O Aluno não se encontra na sala.";
         }
-    }
-
-    
+    } 
 }
