@@ -1,12 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-Saladeaula sala = new Saladeaula("A",1,3);
+Saladeaula sala = new Saladeaula("A",1,2);
 
 app.MapGet("/", () => sala.listar());
-//app.MapGet("/entrar/{naluno}", (string naluno) => sala.entrar(new Aluno(naluno)));
 app.MapGet("/entrar/{naluno}/{nome}", (string naluno, string nome ) => sala.entrar(new Aluno(naluno,nome)));
-//app.MapGet("/sair/{matricula}", (string matricula) => parque.sair(matricula));
+app.MapGet("/sair/{naluno}", (string naluno) => parque.sair(naluno));
 app.Run();
 
 
@@ -66,31 +65,31 @@ class Saladeaula
     }
     
     
-    /*
+    
     //Sair um carro no parque
-    public String sair(String matricula)
+    public String sair(String naluno)
     {
-        Carro toRemove = null;
+        Aluno toRemove = null;
 
-        foreach (Carro car in estacionados)
+        foreach (Aluno al in emsala)
         {
-            if (car.matricula.Equals(matricula))
+            if (al.naluno.Equals(naluno))
             {
-                toRemove = car;
+                toRemove = al;
                 break;
             }
         }
 
         if (toRemove != null)
         {
-            estacionados.Remove(toRemove);
-            return $"O carro {toRemove.matricula} saiu do parque.";
+            emsala.Remove(toRemove);
+            return $"O Aluno {toRemove.naluno} saiu da sala.";
         }
         else
         {
-            return "O carro não se encontra no parque.";
+            return "O Aluno não se encontra na sala.";
         }
     }
 
-    */
+    
 }
