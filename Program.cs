@@ -52,7 +52,7 @@ class Saladeaula
     
     public String entrar(Aluno al)
     {
-        //Ver se existe lugar
+        
         if (emsala.Count < capacidade)
         {
             emsala.Add(al);
